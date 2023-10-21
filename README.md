@@ -31,5 +31,27 @@ Then run `make` to build the firmware. Grab that from the printer with `scp vand
 ```
 
 
-**TODO**: Check interop between fluidd and pgcode.
+### Flashing the XY-Axis Controller (Constellation Supernova)
+
+You can do the configuration step automatically with:
+
+```sh
+cp ~/printer_data/config/.supernova.config ~/klipper/.config
+```
+
+Run `make menuconfig` from the klipper directory, and pick the following options:
+
+1. Architecture: `RP2040`
+2. Bootloader: `0`
+3. Interface: `USB`
+
+Then run `make` to build the firmware. Grab that from the printer with `scp vandal:klipper/out/klipper.uf2 klipper.uf2`, connect the RP2040 to the computer via a USB B Micro cable while holding down the boot button, and then copy it onto the device. Connect the device back to the Raspberry Pi. The firmware ID should be:
+
+```
+/dev/serial/by-id/usb-Klipper_rp2040_E6609103C3335822-if00
+```
+
+## TODO
+
+- Check interop between fluidd and pgcode.
 
