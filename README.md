@@ -68,7 +68,13 @@ Run `make menuconfig` from the klipper directory, and pick the following options
 5. Communication interface: CAN bus (on PB8/PB9)
 6. GPIO Pins: !PB10
 
-Then run `make` to build the firmware. Grab that from the printer with `scp vandal:klipper/out/klipper.bin klipper.bin`. **Disconnect the board from 24V** because booting into DFU mode also turns on the hotend.
+Then run `make` to build the firmware. Flash using `python3 ~/klipper/lib/canboot/flash_can.py -u 9e75a34aab5b`.
+
+Some links for CAN:
+
+- https://maz0r.github.io/klipper_canbus/toolhead/sht36v2.html
+- https://maz0r.github.io/klipper_canbus/controller/canable.html
+- https://mellow.klipper.cn/?spm=a2g0o.detail.1000023.17.5cdd14f6OsvKtM#/board/fly_sht_v2/flash?id=_41-%e7%bc%96%e8%af%91%e5%9b%ba%e4%bb%b6
 
 
 ## TODO
