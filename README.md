@@ -64,10 +64,9 @@ Run `make menuconfig` from the klipper directory, and pick the following options
 1. Enable extra low-level configuration options
 2. Architecture: STM32
 3. Processor: STM32F072
-4. Bootloader offset: No bootloader
-5. Clock Reference: 8 MHz crystal
-6. Communication interface: CAN bus (on PB8/PB9)
-7. GPIO Pins: !PA2
+4. Bootloader offset: 8KiB
+5. Communication interface: CAN bus (on PB8/PB9)
+6. GPIO Pins: !PB10
 
 Then run `make` to build the firmware. Grab that from the printer with `scp vandal:klipper/out/klipper.bin klipper.bin`. **Disconnect the board from 24V** because booting into DFU mode also turns on the hotend.
 
